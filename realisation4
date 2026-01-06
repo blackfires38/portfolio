@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Windows 11 - Nathan Cattin</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NC</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="realisations.html" class="active">Réalisations</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="documents.html">Documents E5</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <div class="icon">⚙️</div>
+            <h1>Migration Windows 11</h1>
+            <p class="subtitle">Déploiement automatisé du parc</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container detail-content">
+            <div class="detail-section">
+                <h3>🎯 Contexte</h3>
+                <p>Dans le cadre de la politique de mise à jour du parc informatique, le Lycée Saint-Marc a décidé de migrer progressivement ses 300+ postes de travail de Windows 10 vers Windows 11. Cette migration nécessite une planification rigoureuse, des tests de compatibilité, et un déploiement automatisé pour minimiser l'impact sur les utilisateurs et garantir une transition en douceur.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>🔍 Problématique</h3>
+                <p>Comment migrer efficacement et de manière automatisée un parc de 300 postes vers Windows 11 tout en garantissant la compatibilité des applications et la satisfaction des utilisateurs ?</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>✅ Objectifs</h3>
+                <ul>
+                    <li>Déployer Windows 11 sur l'ensemble du parc informatique</li>
+                    <li>Automatiser le processus via solution de déploiement réseau</li>
+                    <li>Assurer la compatibilité des applications métier</li>
+                    <li>Former et accompagner les utilisateurs à la nouvelle interface</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>⚙️ Actions Menées</h3>
+
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">1. Phase de préparation et tests</h4>
+                <p>Vérification de la compatibilité matérielle (TPM 2.0, CPU, RAM). Tests de compatibilité des applications sur une image Windows 11 de référence. Création d'une séquence de tâches MDT personnalisée.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">2. Configuration du serveur de déploiement</h4>
+                <p>Configuration de Microsoft Deployment Toolkit (MDT) et Windows Deployment Services (WDS). Création d'une image de référence Windows 11 avec les applications standard. Intégration des drivers et des mises à jour.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">3. Déploiement progressif</h4>
+                <p>Déploiement pilote sur 20 postes test avec remontée des problèmes éventuels. Déploiement par vagues de 30-40 postes par semaine. Utilisation du démarrage réseau PXE pour installation automatique.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">4. Support et accompagnement</h4>
+                <p>Accompagnement des utilisateurs lors de la prise en main de Windows 11. Résolution des problèmes post-migration. Création de guides utilisateur pour les nouvelles fonctionnalités.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>📊 Résultats Obtenus</h3>
+                <ul>
+                    <li>120 postes migrés avec succès vers Windows 11 en première année</li>
+                    <li>Taux de réussite du déploiement automatisé de 95%</li>
+                    <li>Temps moyen d'installation par poste : 45 minutes (entièrement automatisé)</li>
+                    <li>Zéro perte de données utilisateur grâce à la sauvegarde des profils</li>
+                    <li>Retours utilisateurs positifs sur les performances de Windows 11</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>💡 Compétences E5 Mobilisées</h3>
+                <div class="competences-badges">
+                    <span class="competence-badge">C1 - Gérer le patrimoine</span>
+                    <span class="competence-badge">C4 - Travailler en mode projet</span>
+                    <span class="competence-badge">C5 - Mettre à disposition un service</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🛠️ Technologies Utilisées</h3>
+                <div class="card-tags">
+                    <span class="tag">Windows 11</span>
+                    <span class="tag">MDT</span>
+                    <span class="tag">WDS</span>
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">PowerShell</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="realisations.html" class="btn btn-secondary">← Retour aux réalisations</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nathan Cattin - Portfolio BTS SIO SISR</p>
+        </div>
+    </footer>
+</body>
+</html>
