@@ -3,178 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathan Cattin - Portfolio BTS SIO SISR</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio - BTS SIO Alternance</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header / Navigation -->
-    <header>
-        <nav>
-            <div class="logo">NC</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="documents.html">Documents E5</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <!-- Hero Section -->
-    <section id="accueil" class="hero">
+    <section class="hero">
         <div class="container">
-            <h1>Nathan Cattin</h1>
-            <p class="subtitle">BTS SIO SISR · Alternant</p>
-            <p class="description">
-                Étudiant en première année de BTS Services Informatiques aux Organisations, 
-                option Solutions d'Infrastructure, Systèmes et Réseaux (SISR) en alternance 
-                au Lycée Saint-Marc à Nivolas-Vermelle. Passionné par l'administration système, 
-                la cybersécurité et la gestion d'infrastructure IT.
-            </p>
-            <div class="cta-buttons">
-                <a href="realisations.html" class="btn btn-primary">Mes Réalisations</a>
-                <a href="contact.html" class="btn btn-secondary">Me Contacter</a>
-            </div>
+            <h1>Étudiant BTS SIO</h1>
+            <p class="subtitle">Spécialisé en Infrastructure & Support Technique</p>
+            <p class="description">Passionné par l'administration système, la cybersécurité et la gestion d'infrastructure IT</p>
+            <a href="#contact" class="cta-button">Me contacter</a>
         </div>
     </section>
 
-    <!-- Aperçu des réalisations -->
-    <section class="apercu-section">
+    <!-- Experience Section -->
+    <section class="experience">
         <div class="container">
-            <h2 class="section-title">Mes Réalisations Professionnelles</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem;">
-                5 réalisations professionnelles effectuées en première année de BTS SIO SISR
-            </p>
+            <h2>Mes Missions en Alternance</h2>
+            <p class="section-intro">Première année de BTS SIO - Expériences techniques variées</p>
             
-            <div class="realisations-grid">
-                <!-- Réalisation 1 -->
-                <div class="realisation-card">
-                    <div class="card-icon">🛡️</div>
-                    <h3 class="card-title">Gestion Antivirus Kaspersky</h3>
-                    <p class="card-description">
-                        Optimisation complète de la console Kaspersky Security Center pour garantir 
-                        une remontée d'informations fiable.
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Kaspersky</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag">Cybersécurité</span>
+            <div class="mission-grid">
+                <!-- Mission 1 -->
+                <div class="mission-card">
+                    <div class="mission-icon">🛡️</div>
+                    <h3>Gestion Antivirus Kaspersky</h3>
+                    <p>Nettoyage complet de la solution : suppression des utilisateurs obsolètes, correction des éléments défectueux, et resynchronisation avec l'Active Directory pour assurer une remontée fiable des informations.</p>
+                    <div class="tags">
+                        <span>Kaspersky</span>
+                        <span>Active Directory</span>
+                        <span>Cybersécurité</span>
                     </div>
-                    <a href="realisation-1.html" class="card-link">
-                        Voir les détails →
-                    </a>
                 </div>
 
-                <!-- Réalisation 2 -->
-                <div class="realisation-card">
-                    <div class="card-icon">🌐</div>
-                    <h3 class="card-title">Infrastructure Réseau</h3>
-                    <p class="card-description">
-                        Réorganisation physique de l'infrastructure : baies de brassage, 
-                        installation de prises RJ45.
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Réseau</span>
-                        <span class="tag">Câblage</span>
-                        <span class="tag">Infrastructure</span>
+                <!-- Mission 2 -->
+                <div class="mission-card">
+                    <div class="mission-icon">🌐</div>
+                    <h3>Infrastructure Réseau</h3>
+                    <p>Nettoyage et organisation de baies de brassage, dépose de switches inutilisés, installation de prises RJ45 dans différentes salles avec plastrons muraux.</p>
+                    <div class="tags">
+                        <span>Réseau</span>
+                        <span>Câblage</span>
+                        <span>Infrastructure</span>
                     </div>
-                    <a href="realisation-2.html" class="card-link">
-                        Voir les détails →
-                    </a>
                 </div>
 
-                <!-- Réalisation 3 -->
-                <div class="realisation-card">
-                    <div class="card-icon">💻</div>
-                    <h3 class="card-title">Support Technique</h3>
-                    <p class="card-description">
-                        Gestion quotidienne des demandes d'assistance pour l'ensemble du personnel 
-                        via système de ticketing.
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Help Desk</span>
-                        <span class="tag">Support</span>
-                        <span class="tag">Ticketing</span>
+                <!-- Mission 3 -->
+                <div class="mission-card">
+                    <div class="mission-icon">💻</div>
+                    <h3>Support Technique</h3>
+                    <p>Traitement de nombreux tickets d'assistance pour enseignants, surveillants et membres de l'administration, développant mes compétences en support utilisateur.</p>
+                    <div class="tags">
+                        <span>Help Desk</span>
+                        <span>Support</span>
+                        <span>Ticketing</span>
                     </div>
-                    <a href="realisation-3.html" class="card-link">
-                        Voir les détails →
-                    </a>
                 </div>
 
-                <!-- Réalisation 4 -->
-                <div class="realisation-card">
-                    <div class="card-icon">⚙️</div>
-                    <h3 class="card-title">Migration Windows 11</h3>
-                    <p class="card-description">
-                        Déploiement automatisé de Windows 11 sur le parc informatique 
-                        via serveur MDT/WDS.
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Windows 11</span>
-                        <span class="tag">Déploiement</span>
-                        <span class="tag">MDT/WDS</span>
+                <!-- Mission 4 -->
+                <div class="mission-card">
+                    <div class="mission-icon">⚙️</div>
+                    <h3>Migration Windows 11</h3>
+                    <p>Participation active à la migration de postes informatiques vers Windows 11 via déploiement réseau, consolidant mes compétences en gestion de parc.</p>
+                    <div class="tags">
+                        <span>Windows 11</span>
+                        <span>Déploiement</span>
+                        <span>MDT/WDS</span>
                     </div>
-                    <a href="realisation-4.html" class="card-link">
-                        Voir les détails →
-                    </a>
                 </div>
 
-                <!-- Réalisation 5 -->
-                <div class="realisation-card">
-                    <div class="card-icon">📱</div>
-                    <h3 class="card-title">Gestion iPads Intune</h3>
-                    <p class="card-description">
-                        Configuration et intégration de tablettes iPad dans Microsoft Intune 
-                        pour gestion centralisée.
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Intune</span>
-                        <span class="tag">MDM</span>
-                        <span class="tag">iOS</span>
+                <!-- Mission 5 -->
+                <div class="mission-card">
+                    <div class="mission-icon">📱</div>
+                    <h3>Gestion iPads - Microsoft Intune</h3>
+                    <p>Préparation d'iPads avec MacBook et intégration à Microsoft Intune pour une administration centralisée, comparable aux GPO Windows, limitant les droits élèves.</p>
+                    <div class="tags">
+                        <span>Intune</span>
+                        <span>MDM</span>
+                        <span>iOS</span>
                     </div>
-                    <a href="realisation-5.html" class="card-link">
-                        Voir les détails →
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats-section">
+    <!-- Skills Section -->
+    <section class="skills">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Réalisations</div>
+            <h2>Compétences Techniques</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🔐 Cybersécurité</h3>
+                    <ul>
+                        <li>Kaspersky Security</li>
+                        <li>Active Directory</li>
+                        <li>Gestion des droits</li>
+                    </ul>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Compétences E5</div>
+
+                <div class="skill-category">
+                    <h3>🌐 Infrastructure Réseau</h3>
+                    <ul>
+                        <li>Câblage RJ45</li>
+                        <li>Configuration switches</li>
+                        <li>Baies de brassage</li>
+                    </ul>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">300+</div>
-                    <div class="stat-label">Postes gérés</div>
+
+                <div class="skill-category">
+                    <h3>💻 Systèmes</h3>
+                    <ul>
+                        <li>Windows 10/11</li>
+                        <li>Déploiement réseau</li>
+                        <li>Gestion de parc</li>
+                    </ul>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">Tickets traités</div>
+
+                <div class="skill-category">
+                    <h3>📱 MDM</h3>
+                    <ul>
+                        <li>Microsoft Intune</li>
+                        <li>Gestion iOS</li>
+                        <li>Stratégies de groupe</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <p class="contact-intro">Intéressé par mon profil ? N'hésitez pas à me contacter !</p>
+            
+            <div class="contact-links">
+                <a href="" class="contact-card">
+                    <span class="contact-icon">✉</span>
+                    <span class="contact-text">cattin.nathan@orange.fr</span>
+                </a>
+                
+                <a href="https://fr.linkedin.com/in/nathan-cattin-4829632a1?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank" class="contact-card">
+                    <span class="contact-icon">💼</span>
+                    <span class="contact-text">LinkedIn</span>
+                </a>
+                
+                <a href="" target="_blank" class="contact-card">
+                    <span class="contact-icon">✆</span>
+                    <span class="contact-text">06-78-43-16-46</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2025 Nathan Cattin - Portfolio BTS SIO SISR - Tous droits réservés</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-                Lycée Saint-Marc, Nivolas-Vermelle · Épreuve E5 - Session 2025
-            </p>
+            <p>&copy; 2025 Portfolio BTS SIO. Tous droits réservés.</p>
         </div>
     </footer>
 </body>
