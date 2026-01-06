@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Réseau - Réorganisation - Nathan Cattin</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NC</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="realisations.html" class="active">Réalisations</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="documents.html">Documents E5</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <div class="icon">🌐</div>
+            <h1>Infrastructure Réseau - Réorganisation</h1>
+            <p class="subtitle">Optimisation de l'infrastructure physique</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container detail-content">
+            <div class="detail-section">
+                <h3>🎯 Contexte</h3>
+                <p>L'infrastructure réseau du lycée nécessitait une remise en état complète. Les baies de brassage présentaient un câblage désorganisé, des switches obsolètes occupaient de l'espace inutilement, et plusieurs salles manquaient de prises RJ45 fonctionnelles, limitant les possibilités de déploiement et créant des difficultés pour la maintenance.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>🔍 Problématique</h3>
+                <p>Comment améliorer l'organisation physique de l'infrastructure réseau pour faciliter la maintenance, optimiser l'espace disponible et étendre la connectivité dans les zones non desservies ?</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>✅ Objectifs</h3>
+                <ul>
+                    <li>Réorganiser et nettoyer les baies de brassage existantes</li>
+                    <li>Libérer de l'espace en déposant les équipements obsolètes</li>
+                    <li>Installer de nouvelles prises RJ45 dans plusieurs salles</li>
+                    <li>Améliorer la maintenabilité de l'infrastructure</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>⚙️ Actions Menées</h3>
+
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">1. Audit de l'infrastructure existante</h4>
+                <p>Inventaire complet des baies de brassage, identification des switches obsolètes ou non utilisés, repérage des salles nécessitant des prises supplémentaires.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">2. Nettoyage et réorganisation des baies</h4>
+                <p>Démêlage et réorganisation des câbles selon les normes. Étiquetage complet de tous les câbles. Dépose de 5 switches obsolètes libérant 3U d'espace en baie.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">3. Installation de nouvelles prises RJ45</h4>
+                <p>Tirage de nouveaux câbles depuis les baies de brassage vers 3 salles. Installation de 12 prises RJ45 avec plastrons muraux professionnels. Sertissage et tests de continuité.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">4. Tests et validation</h4>
+                <p>Tests de connectivité sur toutes les nouvelles prises. Vérification de la conformité aux normes de câblage. Documentation de l'infrastructure mise à jour.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>📊 Résultats Obtenus</h3>
+                <ul>
+                    <li>Baies de brassage organisées et conformes aux normes de câblage</li>
+                    <li>Libération de 3U d'espace utilisable pour de futurs équipements</li>
+                    <li>12 nouvelles prises RJ45 opérationnelles augmentant la capacité d'accueil</li>
+                    <li>Temps de dépannage réseau réduit grâce à l'étiquetage complet</li>
+                    <li>Documentation complète de l'infrastructure à jour</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>💡 Compétences E5 Mobilisées</h3>
+                <div class="competences-badges">
+                    <span class="competence-badge">C1 - Gérer le patrimoine</span>
+                    <span class="competence-badge">C4 - Travailler en mode projet</span>
+                    <span class="competence-badge">C5 - Mettre à disposition un service</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🛠️ Technologies Utilisées</h3>
+                <div class="card-tags">
+                    <span class="tag">Câblage RJ45</span>
+                    <span class="tag">Switches réseau</span>
+                    <span class="tag">Baies de brassage</span>
+                    <span class="tag">Outils de sertissage</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="realisations.html" class="btn btn-secondary">← Retour aux réalisations</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nathan Cattin - Portfolio BTS SIO SISR</p>
+        </div>
+    </footer>
+</body>
+</html>
