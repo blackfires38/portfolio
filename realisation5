@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion iPads - Microsoft Intune - Nathan Cattin</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NC</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="realisations.html" class="active">Réalisations</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="documents.html">Documents E5</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <div class="icon">📱</div>
+            <h1>Gestion iPads - Microsoft Intune</h1>
+            <p class="subtitle">Gestion centralisée des tablettes</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container detail-content">
+            <div class="detail-section">
+                <h3>🎯 Contexte</h3>
+                <p>Le lycée a investi dans une flotte de 50 iPads destinés aux élèves et enseignants pour enrichir les pratiques pédagogiques numériques. Pour garantir un usage conforme et sécurisé, ces tablettes doivent être centralisées dans une solution de gestion MDM (Mobile Device Management) permettant de contrôler les applications, limiter les fonctionnalités, et appliquer des politiques de sécurité comparables à celles des postes Windows.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>🔍 Problématique</h3>
+                <p>Comment déployer et gérer une flotte d'iPads de manière centralisée tout en appliquant des restrictions adaptées au contexte scolaire ?</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>✅ Objectifs</h3>
+                <ul>
+                    <li>Intégrer les iPads dans Microsoft Intune pour une gestion centralisée</li>
+                    <li>Configurer des stratégies de restriction adaptées au contexte scolaire</li>
+                    <li>Déployer automatiquement les applications pédagogiques</li>
+                    <li>Assurer la sécurité et la conformité des appareils</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>⚙️ Actions Menées</h3>
+
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">1. Configuration d'Apple Business Manager</h4>
+                <p>Inscription des iPads dans Apple Business Manager (ABM) pour permettre l'enrollment automatique. Liaison d'ABM avec Microsoft Intune via la configuration d'un token MDM.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">2. Création des profils de configuration Intune</h4>
+                <p>Création de profils de restrictions iOS : limitation de l'App Store, désactivation des achats intégrés, blocage de Safari et des réseaux sociaux pendant les heures de cours, restrictions sur la modification des paramètres système.</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">3. Déploiement des applications</h4>
+                <p>Configuration du déploiement automatique d'applications pédagogiques (GeoGebra, Kahoot, Pages, Numbers, Keynote). Attribution des licences via VPP (Volume Purchase Program).</p>
+                <h4 style="color: var(--secondary); margin: 2rem 0 1rem 0;">4. Enrollment et formation</h4>
+                <p>Configuration du processus d'enrollment automatique à l'allumage des iPads. Formation des enseignants à l'utilisation des iPads et des applications déployées. Documentation des procédures de dépannage.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>📊 Résultats Obtenus</h3>
+                <ul>
+                    <li>50 iPads intégrés avec succès dans Microsoft Intune</li>
+                    <li>Politiques de restriction efficaces limitant les usages non pédagogiques</li>
+                    <li>Déploiement automatique de 12 applications pédagogiques sur tous les appareils</li>
+                    <li>Temps de configuration par iPad réduit de 30 minutes à 5 minutes</li>
+                    <li>Sécurité renforcée avec chiffrement, code PIN obligatoire et effacement à distance activé</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>💡 Compétences E5 Mobilisées</h3>
+                <div class="competences-badges">
+                    <span class="competence-badge">C1 - Gérer le patrimoine</span>
+                    <span class="competence-badge">C4 - Travailler en mode projet</span>
+                    <span class="competence-badge">C5 - Mettre à disposition un service</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🛠️ Technologies Utilisées</h3>
+                <div class="card-tags">
+                    <span class="tag">Microsoft Intune</span>
+                    <span class="tag">Apple Business Manager</span>
+                    <span class="tag">iOS/iPadOS</span>
+                    <span class="tag">VPP</span>
+                    <span class="tag">Azure AD</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="realisations.html" class="btn btn-secondary">← Retour aux réalisations</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nathan Cattin - Portfolio BTS SIO SISR</p>
+        </div>
+    </footer>
+</body>
+</html>
