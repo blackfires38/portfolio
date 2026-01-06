@@ -3,163 +3,775 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - BTS SIO Alternance</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Nathan Cattin - Portfolio BTS SIO SISR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary: #00e5ff;
+            --dark: #0a0e27;
+            --dark-light: #151b3d;
+            --dark-lighter: #1e2749;
+            --text: #e4e9f7;
+            --text-muted: #8892b8;
+            --accent: #00ff88;
+            --warning: #ffa500;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Background animé */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: bgShift 20s ease infinite alternate;
+        }
+        
+        @keyframes bgShift {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-20px) translateY(-20px); }
+        }
+        
+        /* Header */
+        header {
+            background: rgba(21, 27, 61, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite alternate;
+        }
+        
+        @keyframes gradientShift {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(20deg); }
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 102, 255, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        /* Cards des réalisations */
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .realisation-card {
+            background: linear-gradient(135deg, var(--dark-light), var(--dark-lighter));
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .realisation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .realisation-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.3);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .card-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: rgba(0, 102, 255, 0.2);
+            color: var(--secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+        }
+        
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .card-link:hover {
+            gap: 1rem;
+            color: var(--secondary);
+        }
+        
+        /* Compétences */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .competence-card {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .competence-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .competence-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .competence-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .competence-list {
+            list-style: none;
+        }
+        
+        .competence-list li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .competence-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Contact */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            background: var(--dark-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        
+        .contact-item:hover {
+            border-color: var(--secondary);
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+        }
+        
+        .contact-text {
+            text-align: left;
+        }
+        
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-light);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
+            margin-top: 5rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .realisations-grid,
+            .competences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations d'entrée */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .realisation-card,
+        .competence-card {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+        
+        .realisation-card:nth-child(1) { animation-delay: 0.1s; }
+        .realisation-card:nth-child(2) { animation-delay: 0.2s; }
+        .realisation-card:nth-child(3) { animation-delay: 0.3s; }
+        .realisation-card:nth-child(4) { animation-delay: 0.4s; }
+        .realisation-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .competence-card:nth-child(1) { animation-delay: 0.1s; }
+        .competence-card:nth-child(2) { animation-delay: 0.2s; }
+        .competence-card:nth-child(3) { animation-delay: 0.3s; }
+        .competence-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
 </head>
 <body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">NC</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#documents">Documents E5</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="accueil" class="hero">
         <div class="container">
-            <h1>Étudiant BTS SIO</h1>
-            <p class="subtitle">Spécialisé en Infrastructure & Support Technique</p>
-            <p class="description">Passionné par l'administration système, la cybersécurité et la gestion d'infrastructure IT</p>
-            <a href="#contact" class="cta-button">Me contacter</a>
+            <h1>Nathan Cattin</h1>
+            <p class="subtitle">BTS SIO SISR · Alternant</p>
+            <p class="description">
+                Étudiant en première année de BTS Services Informatiques aux Organisations, 
+                option Solutions d'Infrastructure, Systèmes et Réseaux (SISR) en alternance 
+                au Lycée Saint-Marc à Nivolas-Vermelle. Passionné par l'administration système, 
+                la cybersécurité et la gestion d'infrastructure IT.
+            </p>
+            <div class="cta-buttons">
+                <a href="#realisations" class="btn btn-primary">Mes Réalisations</a>
+                <a href="#contact" class="btn btn-secondary">Me Contacter</a>
+            </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience">
+    <!-- Réalisations professionnelles -->
+    <section id="realisations">
         <div class="container">
-            <h2>Mes Missions en Alternance</h2>
-            <p class="section-intro">Première année de BTS SIO - Expériences techniques variées</p>
+            <h2 class="section-title">Réalisations Professionnelles E5</h2>
             
-            <div class="mission-grid">
-                <!-- Mission 1 -->
-                <div class="mission-card">
-                    <div class="mission-icon">🛡️</div>
-                    <h3>Gestion Antivirus Kaspersky</h3>
-                    <p>Nettoyage complet de la solution : suppression des utilisateurs obsolètes, correction des éléments défectueux, et resynchronisation avec l'Active Directory pour assurer une remontée fiable des informations.</p>
-                    <div class="tags">
-                        <span>Kaspersky</span>
-                        <span>Active Directory</span>
-                        <span>Cybersécurité</span>
+            <div class="realisations-grid">
+                <!-- Réalisation 1 -->
+                <div class="realisation-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3 class="card-title">Gestion Antivirus Kaspersky</h3>
+                    <p class="card-description">
+                        Optimisation complète de la console Kaspersky Security Center : suppression des utilisateurs 
+                        obsolètes, correction des anomalies et resynchronisation avec l'Active Directory pour garantir 
+                        une remontée d'informations fiable et une gestion efficace du parc.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Kaspersky</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">Cybersécurité</span>
                     </div>
+                    <a href="#realisation-1-detail" class="card-link">
+                        Voir les détails →
+                    </a>
                 </div>
 
-                <!-- Mission 2 -->
-                <div class="mission-card">
-                    <div class="mission-icon">🌐</div>
-                    <h3>Infrastructure Réseau</h3>
-                    <p>Nettoyage et organisation de baies de brassage, dépose de switches inutilisés, installation de prises RJ45 dans différentes salles avec plastrons muraux.</p>
-                    <div class="tags">
-                        <span>Réseau</span>
-                        <span>Câblage</span>
-                        <span>Infrastructure</span>
+                <!-- Réalisation 2 -->
+                <div class="realisation-card">
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title">Infrastructure Réseau</h3>
+                    <p class="card-description">
+                        Réorganisation physique de l'infrastructure réseau : nettoyage et optimisation des baies de 
+                        brassage, dépose de switches obsolètes, installation de nouvelles prises RJ45 dans plusieurs 
+                        salles avec pose de plastrons muraux professionnels.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Réseau</span>
+                        <span class="tag">Câblage</span>
+                        <span class="tag">Infrastructure</span>
                     </div>
+                    <a href="#realisation-2-detail" class="card-link">
+                        Voir les détails →
+                    </a>
                 </div>
 
-                <!-- Mission 3 -->
-                <div class="mission-card">
-                    <div class="mission-icon">💻</div>
-                    <h3>Support Technique</h3>
-                    <p>Traitement de nombreux tickets d'assistance pour enseignants, surveillants et membres de l'administration, développant mes compétences en support utilisateur.</p>
-                    <div class="tags">
-                        <span>Help Desk</span>
-                        <span>Support</span>
-                        <span>Ticketing</span>
+                <!-- Réalisation 3 -->
+                <div class="realisation-card">
+                    <div class="card-icon">💻</div>
+                    <h3 class="card-title">Support Technique Utilisateurs</h3>
+                    <p class="card-description">
+                        Gestion quotidienne des demandes d'assistance via système de ticketing pour l'ensemble 
+                        du personnel (enseignants, surveillants, administration). Diagnostic, résolution 
+                        d'incidents et accompagnement utilisateur.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Help Desk</span>
+                        <span class="tag">Support</span>
+                        <span class="tag">Ticketing</span>
                     </div>
+                    <a href="#realisation-3-detail" class="card-link">
+                        Voir les détails →
+                    </a>
                 </div>
 
-                <!-- Mission 4 -->
-                <div class="mission-card">
-                    <div class="mission-icon">⚙️</div>
-                    <h3>Migration Windows 11</h3>
-                    <p>Participation active à la migration de postes informatiques vers Windows 11 via déploiement réseau, consolidant mes compétences en gestion de parc.</p>
-                    <div class="tags">
-                        <span>Windows 11</span>
-                        <span>Déploiement</span>
-                        <span>MDT/WDS</span>
+                <!-- Réalisation 4 -->
+                <div class="realisation-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3 class="card-title">Migration Windows 11</h3>
+                    <p class="card-description">
+                        Participation active au projet de migration du parc informatique vers Windows 11. 
+                        Déploiement automatisé via serveur de déploiement réseau (MDT/WDS), tests de compatibilité 
+                        et accompagnement des utilisateurs.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Windows 11</span>
+                        <span class="tag">Déploiement</span>
+                        <span class="tag">MDT/WDS</span>
                     </div>
+                    <a href="#realisation-4-detail" class="card-link">
+                        Voir les détails →
+                    </a>
                 </div>
 
-                <!-- Mission 5 -->
-                <div class="mission-card">
-                    <div class="mission-icon">📱</div>
-                    <h3>Gestion iPads - Microsoft Intune</h3>
-                    <p>Préparation d'iPads avec MacBook et intégration à Microsoft Intune pour une administration centralisée, comparable aux GPO Windows, limitant les droits élèves.</p>
-                    <div class="tags">
-                        <span>Intune</span>
-                        <span>MDM</span>
-                        <span>iOS</span>
+                <!-- Réalisation 5 -->
+                <div class="realisation-card">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Gestion iPads - Microsoft Intune</h3>
+                    <p class="card-description">
+                        Configuration et intégration de tablettes iPad dans Microsoft Intune pour une gestion 
+                        centralisée. Mise en place de stratégies de restriction comparables aux GPO Windows, 
+                        limitation des droits élèves et déploiement d'applications.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Intune</span>
+                        <span class="tag">MDM</span>
+                        <span class="tag">iOS</span>
                     </div>
+                    <a href="#realisation-5-detail" class="card-link">
+                        Voir les détails →
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
+    <!-- Compétences -->
+    <section id="competences">
         <div class="container">
-            <h2>Compétences Techniques</h2>
+            <h2 class="section-title">Compétences Techniques</h2>
             
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🔐 Cybersécurité</h3>
-                    <ul>
-                        <li>Kaspersky Security</li>
+            <div class="competences-grid">
+                <div class="competence-card">
+                    <div class="competence-icon">🔐</div>
+                    <h3 class="competence-title">Cybersécurité</h3>
+                    <ul class="competence-list">
+                        <li>Kaspersky Security Center</li>
                         <li>Active Directory</li>
-                        <li>Gestion des droits</li>
+                        <li>Gestion des droits et habilitations</li>
+                        <li>Politiques de sécurité</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3>🌐 Infrastructure Réseau</h3>
-                    <ul>
-                        <li>Câblage RJ45</li>
+                <div class="competence-card">
+                    <div class="competence-icon">🌐</div>
+                    <h3 class="competence-title">Infrastructure Réseau</h3>
+                    <ul class="competence-list">
+                        <li>Câblage structuré RJ45</li>
                         <li>Configuration switches</li>
                         <li>Baies de brassage</li>
+                        <li>Normes de câblage</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3>💻 Systèmes</h3>
-                    <ul>
+                <div class="competence-card">
+                    <div class="competence-icon">💻</div>
+                    <h3 class="competence-title">Systèmes</h3>
+                    <ul class="competence-list">
                         <li>Windows 10/11</li>
-                        <li>Déploiement réseau</li>
-                        <li>Gestion de parc</li>
+                        <li>Déploiement automatisé (MDT/WDS)</li>
+                        <li>Gestion de parc informatique</li>
+                        <li>Active Directory</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3>📱 MDM</h3>
-                    <ul>
+                <div class="competence-card">
+                    <div class="competence-icon">📱</div>
+                    <h3 class="competence-title">MDM & Mobilité</h3>
+                    <ul class="competence-list">
                         <li>Microsoft Intune</li>
-                        <li>Gestion iOS</li>
-                        <li>Stratégies de groupe</li>
+                        <li>Gestion iOS/iPadOS</li>
+                        <li>Stratégies de groupe mobiles</li>
+                        <li>Déploiement d'applications</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Documents E5 -->
+    <section id="documents" style="background: var(--dark-light);">
         <div class="container">
-            <h2>Me Contacter</h2>
-            <p class="contact-intro">Intéressé par mon profil ? N'hésitez pas à me contacter !</p>
+            <h2 class="section-title">Documents Épreuve E5</h2>
             
-            <div class="contact-links">
-                <a href="" class="contact-card">
-                    <span class="contact-icon">✉</span>
-                    <span class="contact-text">cattin.nathan@orange.fr</span>
-                </a>
+            <div class="contact-info" style="max-width: 800px; margin: 0 auto;">
+                <div class="contact-item" style="display: block; text-align: center;">
+                    <div class="contact-icon" style="font-size: 3rem; margin-bottom: 1rem;">📄</div>
+                    <div class="contact-text">
+                        <p class="contact-label" style="text-align: center;">Portfolio complet</p>
+                        <p class="contact-value" style="text-align: center;">Fiches détaillées de réalisations</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted);">
+                            Consultez les fiches détaillées ci-dessous pour chaque réalisation professionnelle
+                        </p>
+                    </div>
+                </div>
                 
-                <a href="https://fr.linkedin.com/in/nathan-cattin-4829632a1?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank" class="contact-card">
-                    <span class="contact-icon">💼</span>
-                    <span class="contact-text">LinkedIn</span>
-                </a>
+                <div class="contact-item" style="display: block; text-align: center;">
+                    <div class="contact-icon" style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                    <div class="contact-text">
+                        <p class="contact-label" style="text-align: center;">Tableau de synthèse</p>
+                        <p class="contact-value" style="text-align: center;">Annexe 8-1 - Compétences mobilisées</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted);">
+                            Récapitulatif des compétences pour chaque réalisation (format .xlsx)
+                        </p>
+                    </div>
+                </div>
                 
-                <a href="" target="_blank" class="contact-card">
-                    <span class="contact-icon">✆</span>
-                    <span class="contact-text">06-78-43-16-46</span>
-                </a>
+                <div class="contact-item" style="display: block; text-align: center;">
+                    <div class="contact-icon" style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <div class="contact-text">
+                        <p class="contact-label" style="text-align: center;">Attestations</p>
+                        <p class="contact-value" style="text-align: center;">Certificat de travail - Lycée Saint-Marc</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted);">
+                            Attestation d'alternance validant les réalisations professionnelles
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Me Contacter</h2>
+            
+            <div class="contact-content">
+                <p style="margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">
+                    Intéressé par mon profil ou mes réalisations ? N'hésitez pas à me contacter !
+                </p>
+                
+                <div class="contact-info">
+                    <a href="mailto:cattin.nathan@orange.fr" class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <p class="contact-label">Email</p>
+                            <p class="contact-value">cattin.nathan@orange.fr</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://fr.linkedin.com/in/nathan-cattin-4829632a1" target="_blank" class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-text">
+                            <p class="contact-label">LinkedIn</p>
+                            <p class="contact-value">Nathan Cattin</p>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:+33678431646" class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <p class="contact-label">Téléphone</p>
+                            <p class="contact-value">06 78 43 16 46</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Portfolio BTS SIO. Tous droits réservés.</p>
+            <p>&copy; 2025 Nathan Cattin - Portfolio BTS SIO SISR - Tous droits réservés</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                Lycée Saint-Marc, Nivolas-Vermelle · Épreuve E5 - Session 2025
+            </p>
         </div>
     </footer>
 </body>
